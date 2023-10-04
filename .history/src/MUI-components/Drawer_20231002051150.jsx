@@ -1,0 +1,46 @@
+import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from '@mui/material';
+import InboxIcon from '@mui/icons-material/Inbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
+import { Create, Home } from '@mui/icons-material';
+
+const Drawerr = ({drawerWidth}) => {
+  return (
+    <Drawer
+    sx={{
+      width: `${drawerWidth}px`,
+      flexShrink: 0,
+      "& .MuiDrawer-paper": {
+        width: `${drawerWidth}px`,
+        boxSizing: "border-box",
+      },
+    }}
+    variant="permanent"
+    anchor="left"
+  >
+    <Toolbar />
+    <Divider />
+    <List>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <Home />
+              </ListItemIcon>
+              <ListItemText primary="Home" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <Create />
+              </ListItemIcon>
+              <ListItemText primary="Create" />
+            </ListItemButton>
+          </ListItem>
+        </List>
+    
+    <Divider />
+  </Drawer>
+  );
+}
+
+export default Drawerr;
